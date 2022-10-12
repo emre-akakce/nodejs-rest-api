@@ -1,8 +1,8 @@
-async function getPosts(req, res, next) {
+async function getPosts(req: any, res: any) {
     res.status(200).json({ posts: [{ title: 'First Post', content: 'This is the first post' }] });
 }
 
-async function createPost (req, res, next) {
+async function createPost (req: any, res: any) {
     const title = req.body.title
     const content = req.body.content
     
