@@ -1,6 +1,6 @@
 const express = require('express')
 
-const feedController = require("../controllers/feed")
+const feedService = require("../services/feed")
 
 const router = express.Router()
 /**
@@ -14,7 +14,7 @@ const router = express.Router()
  *      '200':
  *        description: Got Posts
  */
-router.get('/posts', feedController.getPosts)
+router.get('/posts', feedService.getPosts)
 
 
 /** 
@@ -45,6 +45,6 @@ router.get('/posts', feedController.getPosts)
 *         description: Post created
 *
 */
-router.post('/post', feedController.createPost)
+router.post('/post', feedService.createPost)
 
 module.exports = router;
