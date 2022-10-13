@@ -2,8 +2,12 @@ import { PostModel } from "../models/post.model";
 import { createNewPost, getAllPosts } from "../db/postRepository";
 
 async function getPosts(req: any, res: any) {
-    const posts = await getAllPosts()
-    res.status(200).json({ posts: posts });
+    try {
+        const posts = await getAllPosts()
+        res.status(200).json({ posts: posts });
+    } catch(e) {
+        res.status(404).json({ message: 'Could not get posts'})
+    }
 }
 
 async function createPost (req: any, res: any) {
