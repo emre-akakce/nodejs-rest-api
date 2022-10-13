@@ -19,9 +19,10 @@ export async function getAllUsers() {
 }
 
 export async function getUserInfo(email: string, password: string) {
-    const user = await db.user.findUnique({
+    const user = await db.user.findFirst({
         where: {
-            email: email
+            email: email,
+            password: password
         }
     })
 
