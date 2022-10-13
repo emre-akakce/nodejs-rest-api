@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from 'body-parser';
 const feedRoutes = require('./routes/feed')
+const userRoutes = require('./routes/user')
 const app = express();
 import swaggerUi from 'swagger-ui-express';
 
@@ -33,4 +34,5 @@ app.use((req: any, res: any, next: any) => {
 })
 
 app.use('/feed', feedRoutes)
+app.use('/users', userRoutes)
 app.listen(8000)
