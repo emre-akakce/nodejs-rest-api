@@ -51,4 +51,6 @@ router.get('', userService.getUsers)
 */
 router.post('', userService.createUser)
 
+router.post('/login', userService.login)
+
 module.exports = router

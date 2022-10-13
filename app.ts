@@ -1,10 +1,10 @@
 import express from "express";
 import bodyParser from 'body-parser';
+import swaggerUi from 'swagger-ui-express';
+import jwt from 'jsonwebtoken';
 const feedRoutes = require('./routes/feed')
 const userRoutes = require('./routes/user')
 const app = express();
-import swaggerUi from 'swagger-ui-express';
-
 const swaggerJsDoc = require("swagger-jsdoc");
 
 const swaggerOptions = {
