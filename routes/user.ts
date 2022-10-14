@@ -1,4 +1,5 @@
 import express from "express";
+import { authenticateToken } from "../utils/helper";
 
 const userService = require("../services/user")
 
@@ -16,7 +17,7 @@ const router = express.Router()
  *      '200':
  *        description: Got users
  */
-router.get('', userService.getUsers)
+router.get('', authenticateToken, userService.getUsers)
 
 /** 
 * @swagger
@@ -49,7 +50,7 @@ router.get('', userService.getUsers)
 *         description: User created
 *
 */
-router.post('', userService.createUser)
+router.post('', authenticateToken, userService.createUser)
 
 router.post('/login', userService.login)
 

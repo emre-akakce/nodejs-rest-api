@@ -7,7 +7,9 @@
     "start": "nodemon app.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon script.ts",
-    "devStartAuth": "nodemon ./utils/authServer.js"
+    "devStartAuth": "nodemon ./utils/authServer.js",
+    "build": "rm -rf build && prettier --write src/ && tsc",
+    "dev": "nodemon --config nodemon.json ./app.ts"
   },
   "author": "",
   "license": "ISC",
